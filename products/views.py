@@ -4,6 +4,9 @@ from .forms import ProductForm
 from .models import Product
 
 def product_create_view(request):
+    if request.method == 'POST':
+        my_new_title=request.POST.get('title')
+        print(my_new_title)
     context={}
     return render(request,"products/product_create.html",context)
 
