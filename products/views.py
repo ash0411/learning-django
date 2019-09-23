@@ -5,7 +5,7 @@ from .models import Product
 
 def product_detail_view(request):
     obj=Product.objects.get(id=1)
-    dontext={
-        'object'=obj
+    context={
+        'object':obj
     }
-    return render(request, "product/detail.html",context)
+    return render(request,"product/detail.html",context)
