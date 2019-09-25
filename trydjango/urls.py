@@ -27,12 +27,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_view,name='home'),
     path('contact/',contact_view,name='contact'),
-    path('product/',product_detail_view,name='detail data'),
+    path('product/',product_detail_view,name='product-detail'),
     path('about/',about_view,name='about'),
-    path('create/',product_create_view,name='create view'),
-    path('initial/',render_initial_data,name='initial data'),
-    path('products/<int:id>/delete',product_delete_view,name='delete'),
+    path('create/',product_create_view,name='product-create'),
+    path('initial/',render_initial_data,name='product-initial'),
+    path('products/<int:id>/delete',product_delete_view,name='product-delete'),
     path('products/<int:id>/',dynamic_lookup_view,name='product'),
-    path('products/',product_list_view,name='product')
+    path('products/',product_list_view,name='product-list')
 
 ]
