@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class Article(models.Model):
     title=models.CharField(max_length=120)
@@ -18,5 +18,7 @@ class Article(models.Model):
         choices = TYPE_OF_NOVEL_CHOICES,
         default =novel,
     )
-    publish_date = models.DateField(auto_now=True,auto_now_add=False)
+    publish_date = models.DateField(auto_now=False,auto_now_add=False)
     email = models.EmailField(max_length=50)
+    def get_absolute_url(self):
+        return reverse("article-detail",kwargs={"id": self.id})

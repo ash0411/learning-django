@@ -1,7 +1,7 @@
 from django import forms 
-form .models import Article 
+from .models import Article 
 
-class ArticleModelForm(forms.Modelform):
+class ArticleModelForm(forms.ModelForm):
     class Meta:
         model = Article
         fields ={
