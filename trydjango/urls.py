@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include,path
 from pages.views import home_view,contact_view,about_view
 from blog.views import  article_create_view,article_detail_view,article_list_view
+from login_user.views import login_view
 urlpatterns = [
     path('products/',include('products.urls')), 
     #path('blog/',include('blog.urls')),
@@ -26,5 +27,7 @@ urlpatterns = [
     path('about/<int:id>/',about_view,name='about'),
     path('blog/create/',article_create_view,name='article-create'),
     path('blog/<int:id>/',article_detail_view,name='article-detail'),
-    path('blog/',article_list_view,name='article-list')
+    path('blog/',article_list_view,name='article-list'),
+    path("login/",login_view,name="login"),
+    path('accounts/',include('django.contrib.auth.urls'))
 ]

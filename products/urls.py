@@ -16,5 +16,5 @@ urlpatterns =[
     path('<int:id>/delete',product_delete_view,name='product-delete'),
     path('<int:id>/dynamic',dynamic_lookup_view,name='product'),
     path('',product_list_view,name='product-list'),
-    path('<int:id>/update/',product_update_view, name='product-update')
-]
+    path('<int:id>/update/',product_update_view, name='product-update'),
+    ]
